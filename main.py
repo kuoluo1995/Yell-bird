@@ -40,10 +40,10 @@ class Game:
                 ft1_surf = pygame.font.SysFont(FONT_FILE, 30).render('Use Sound to Fly', True, (0, 0, 0))  # 设置第一行文字颜色
                 self.screen.blit(ft1_surf, [self.screen.get_width() / 2 - ft1_surf.get_width() / 2, 200])  # 设置第一行文字显示位置
                 ft1_surf = pygame.font.SysFont(FONT_FILE, 30).render('When your volume reaches ' + str(DB) + 'DB',
-                                                                     True, (255, 3, 36))  # 设置第一行文字颜色
+                                                                     True, (242, 3, 36))  # 设置第一行文字颜色
                 self.screen.blit(ft1_surf, [self.screen.get_width() / 2 - ft1_surf.get_width() / 2, 300])  # 设置第一行文字显示位置
                 ft1_surf = pygame.font.SysFont(FONT_FILE, 30).render('The game will start',
-                                                                     True, (255, 3, 36))  # 设置第一行文字颜色
+                                                                     True, (242, 3, 36))  # 设置第一行文字颜色
                 self.screen.blit(ft1_surf, [self.screen.get_width() / 2 - ft1_surf.get_width() / 2, 350])  # 设置第一行文字显示位置
                 ft1_surf = pygame.font.SysFont(FONT_FILE, 30).render('Current volume:' + str(self.volume) + 'DB', True,
                                                                      (242, 3, 36))  # 设置第一行文字颜色
@@ -91,9 +91,11 @@ class Game:
         self.screen.blit(self.bird.bird_status[self.bird.status], (self.bird.bird_x, self.bird.bird_y))  # 设置小鸟的坐标
         # 显示分数
         self.screen.blit(self.font.render('Score:' + str(self.score), True, (0, 0, 0)), (100, 50))  # 设置颜色及坐标位置
-        if volume>
-        ft1_surf = pygame.font.SysFont(FONT_FILE, 30).render('Volume:' + str(self.volume) + 'DB', True,
-                                                             (0, 0, 0))  # 设置第一行文字颜色
+        if self.volume > DB:
+            color = (242, 3, 36)
+        else:
+            color = (0, 0, 0)
+        ft1_surf = pygame.font.SysFont(FONT_FILE, 30).render('Volume:' + str(self.volume) + 'DB', True, color)
         self.screen.blit(ft1_surf, [250, 60])  # 设置第一行文字显示位置
         pygame.display.update()  # 更新显示
 
