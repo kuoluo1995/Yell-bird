@@ -22,6 +22,9 @@ GAME_DIFFICULTY = 100  # 设置水管随机移动的距离
 ```bash
 python main.py
 ```
-
+## 游戏运行效果
+![game_start](assets/images/game_start.png)
+![game_in](assets/images/game_in.png)
+![game_over](assets/images/game_over.png)
 ## 游戏素材获取
 https://blog.csdn.net/qq_42554007/article/details/106977545

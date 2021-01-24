@@ -90,7 +90,10 @@ class Game:
         self.bird.update()  # 鸟移动
         self.screen.blit(self.bird.bird_status[self.bird.status], (self.bird.bird_x, self.bird.bird_y))  # 设置小鸟的坐标
         # 显示分数
-        self.screen.blit(self.font.render('Score:' + str(self.score), True, (255, 255, 255)), (100, 50))  # 设置颜色及坐标位置
+        self.screen.blit(self.font.render('Score:' + str(self.score), True, (0, 0, 0)), (100, 50))  # 设置颜色及坐标位置
+        ft1_surf = pygame.font.SysFont(FONT_FILE, 30).render('Volume:' + str(self.volume) + 'DB', True,
+                                                             (0, 0, 0))  # 设置第一行文字颜色
+        self.screen.blit(ft1_surf, [250, 60])  # 设置第一行文字显示位置
         pygame.display.update()  # 更新显示
 
     def game_over(self):
